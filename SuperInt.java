@@ -222,12 +222,16 @@ public class SuperInt
         this.negativo = false;
         operando.negativo = false;
         String auxi=new String();
-        SuperInt divi=new SuperInt("0");  
+        int soma=0;
+        
         SuperInt aux = this;
         SuperInt res = new SuperInt();
         SuperInt aux2=null;
         try{
-            if((operando.x[0]==divi.x[0])&&(operando.numDigitos==divi.numDigitos))
+        	for(int i=0; i< this.numDigitos; i++)
+        	soma=soma+operando.x[i];
+        	   		
+            if(soma==0)//    if((operando.x[0]==divi.x[0])&&(operando.numDigitos==divi.numDigitos))
             {//Verifica se algarismo em SuperInt é equivalente ao número 0 comparando  a um 
             //auxiliar já existente que equivale a 0 , e caso seja igual joga uma exceção
             	throw new DivisaoZeroException(operando);
